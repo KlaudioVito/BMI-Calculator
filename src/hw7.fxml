@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hw7Controller">
+   <children>
+      <Label fx:id="heightLabel" layoutX="161.0" layoutY="47.0" text="65" />
+      <Slider fx:id="heightSlider" blockIncrement="1.0" layoutX="187.0" layoutY="56.0" majorTickUnit="6.0" max="84.0" min="54.0" minorTickCount="1" prefHeight="14.0" prefWidth="361.0" showTickLabels="true" showTickMarks="true" value="65.0" />
+      <Label fx:id="weightLabel" layoutX="158.0" layoutY="108.0" text="100" />
+      <Slider fx:id="weightSlider" blockIncrement="1.0" layoutX="187.0" layoutY="116.0" majorTickUnit="50.0" max="505.0" min="50.0" minorTickCount="1" prefHeight="14.0" prefWidth="361.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+      <Label layoutX="28.0" layoutY="48.0" text="Height (inches)" />
+      <Label layoutX="26.0" layoutY="108.0" text="Weight (pounds)" />
+      <Label layoutX="109.0" layoutY="283.0" text="BMI: ">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="bmiLabel" layoutX="163.0" layoutY="283.0" text="16.6">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <DatePicker fx:id="datePicker" layoutX="600.0" layoutY="109.0" prefHeight="25.0" prefWidth="170.0" promptText="Pick a Date to Store BMI" />
+      <LineChart fx:id="lineChart" alternativeColumnFillVisible="true" layoutX="281.0" layoutY="207.0" prefHeight="421.0" prefWidth="554.0" title="BMI vs Date">
+        <xAxis>
+          <CategoryAxis label="Date" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis autoRanging="false" label="BMI" lowerBound="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="14" prefHeight="200.0" prefWidth="49.0" side="LEFT" tickLabelGap="5.0" tickUnit="8.0" upperBound="125.0" />
+        </yAxis>
+      </LineChart>
+      <MenuBar fx:id="menuBar" layoutY="2.0" prefHeight="25.0" prefWidth="849.0">
+        <menus>
+          <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#openFile" text="Open File" />
+              <MenuItem fx:id="saveData" mnemonicParsing="false" onAction="#saveFile" text="Save As" />
+                  <MenuItem fx:id="fileClose" mnemonicParsing="false" onAction="#quitPressed" text="Exit" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuHistory" mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#appendData" text="Append" />
+                  <MenuItem mnemonicParsing="false" onAction="#removeData" text="Remove" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label focusTraversable="false" layoutX="14.0" layoutY="473.0" text="BMI Color Code:" underline="true" />
+      <Label fx:id="underweight" focusTraversable="false" layoutX="77.0" layoutY="497.0" text="Underweight" />
+      <Label fx:id="normal" focusTraversable="false" layoutX="77.0" layoutY="524.0" text="Normal" />
+      <Label fx:id="overweight" focusTraversable="false" layoutX="77.0" layoutY="551.0" text="Overweight" />
+      <Label fx:id="obese" focusTraversable="false" layoutX="77.0" layoutY="575.0" text="Obese" />
+      <Slider fx:id="ageSlider" blockIncrement="1.0" layoutX="187.0" layoutY="168.0" majorTickUnit="10.0" max="122.0" minorTickCount="5" prefHeight="14.0" prefWidth="361.0" showTickLabels="true" showTickMarks="true" value="25.0" />
+      <Label layoutX="27.0" layoutY="160.0" text="Age (Years)" />
+      <Label fx:id="ageLabel" layoutX="162.0" layoutY="160.0" text="25" />
+      <Label layoutX="72.0" layoutY="322.0" text="Max Heart Rate:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="349.0" text="Target Heart Rate:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lowTargetLabel" layoutX="193.0" layoutY="349.0" text="107">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="230.0" layoutY="349.0" text="-">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="highTargetLabel" layoutX="245.0" layoutY="349.0" text="165">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="maxHeartRateLabel" layoutX="207.0" layoutY="322.0" text="195">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="649.0" layoutY="83.0" text="Select Date" />
+   </children>
+</AnchorPane>
